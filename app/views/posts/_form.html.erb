@@ -1,0 +1,15 @@
+<%= simple_form_for(@post, remote: true) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :content, placeholder: "Write your message tagging friends between whom you want to revive friendship", label: false, input_html: { rows: 4 } %>
+    <%= f.input :anonymous, label: "Post anonymously?" %>
+    <div id="password_field" class="hide">
+      <%= f.input :password, hint: "Password will help to remove your post later if post anonymously." %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Post", class: "btn btn-primary" %>
+  </div>
+<% end %>

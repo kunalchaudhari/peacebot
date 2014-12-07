@@ -1,0 +1,6 @@
+$('#new_post').find('.alert').remove();
+<% if @post.errors.any? %>
+  $('#new_post').prepend("<div class='alert alert-danger'>Something went wrong. Please try again.</div>")
+<% else %>
+  $('#new_post').prepend("<div class='alert alert-success'>Posted successfully.</div>")
+<% end %>
