@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  resources :users
+
   root to: 'posts#index'
 
+  get 'home/about', as: :about
+  get 'home/contact', as: :contact
+
   resources :posts, except: [:new]
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

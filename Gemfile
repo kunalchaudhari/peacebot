@@ -39,3 +39,5 @@ gem 'spring',        group: :development
 gem 'byebug', group: [:development, :test]
 
 gem 'simple_form'
+
+gem 'devise'

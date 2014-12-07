@@ -1,0 +1,15 @@
+<div class="header">
+  <nav>
+    <ul class="nav nav-pills pull-right">
+      <li role="presentation"><a href="#">Home</a></li>
+      <li role="presentation"><a href="<%= about_path %>">About</a></li>
+      <li role="presentation"><a href="<%= contact_path %>">Contact</a></li>
+      <% unless user_signed_in? %>
+        <li role="presentation"><a href="<%= new_user_session_path %>">Sign in</a></li>
+      <% else %>
+        <li role="presentation"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      <% end %>
+    </ul>
+  </nav>
+  <h3 class="text-muted"><a href="<%= root_path %>">PeaceBot</a></h3>
+</div>

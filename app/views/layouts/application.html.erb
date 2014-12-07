@@ -9,18 +9,19 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-          <li role="presentation" class="active"><a href="#">Home</a></li>
-          <li role="presentation"><a href="#">About</a></li>
-          <li role="presentation"><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <h3 class="text-muted">PeaceBot</h3>
-    </div>
+    <%= render partial: 'shared/header' %>
 
     <div class="content">
+      <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
 

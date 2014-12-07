@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Peacebot</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <%= render partial: 'shared/header' %>
+
+    <div class="content">
+      <div class="row">
+        <div class="col-md-9 center-block">
+          <div class="panel panel-default" style="background: #eee;">
+            <div class="panel-body devise-body">
+              <% if flash[:notice] %>
+                <div class="alert alert-success">
+                  <%= flash[:notice] %>
+                </div>
+              <% end %>
+              <% if flash[:alert] %>
+                <div class="alert alert-danger">
+                  <%= flash[:alert] %>
+                </div>
+              <% end %>
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; PeaceBot 2014.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
