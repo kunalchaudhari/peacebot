@@ -4,7 +4,11 @@
     <% if post.anonymous? %>
       <%= image_tag "anon.jpg" %>
     <% else %>
-      <%= image_tag post.user.avatar.url(:thumb) %>
+      <% if post.user.avatar? %>
+        <%= image_tag post.user.avatar.url(:thumb) %>
+      <% else %>
+        <%= image_tag "anon.jpg" %>
+      <% end %>
     <% end %>
   </a>
   <div class="media-body">
