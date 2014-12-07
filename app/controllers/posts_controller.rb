@@ -27,6 +27,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.ip_address = request.remote_ip
+    @post.user = current_user
     @post.save
   end
 

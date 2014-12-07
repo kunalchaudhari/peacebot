@@ -1,4 +1,11 @@
 <div class="jumbotron text-left">
   <p class="lead">PeaceBot helps to communicate with friends and to revive their friendships &mdash; knowingly or anonymously.</p>
-  <%= render partial: 'posts/form' %>
+  <div id="new_post_form">
+    <%= render partial: 'posts/form' %>
+  </div>
+</div>
+
+<h2>Feed</h2>
+<div id="posts">
+  <%= render @posts %>
 </div>

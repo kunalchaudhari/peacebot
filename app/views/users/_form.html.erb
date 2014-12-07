@@ -2,10 +2,18 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :firstname %>
-    <%= f.input :lastname %>
-    <%= f.input :email %>
-    <%= f.input :about %>
+    <% if @user.avatar? %>
+      <%= image_tag @user.avatar.url(:thumb) %>
+    <% end %>
+
+    <%= f.input :avatar, label: false %>
+
+    <%= f.input :name %>
+    
+    <% unless @user.provider == "twitter" %>
+      <%= f.input :email %>
+    <% end %>
+    <%= f.input :about, input_html: { rows: 5 } %>
   </div>
 
   <div class="form-actions">

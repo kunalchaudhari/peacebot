@@ -4,3 +4,6 @@ $('#new_post').find('.alert').remove();
 <% else %>
   $('#new_post').prepend("<div class='alert alert-success'>Posted successfully.</div>")
 <% end %>
+$('#posts').prepend("<%=j render partial: 'posts/post', collection: [@post] %>");
+<% @post = Post.new %>
+$('#new_post').find("input[type=text], textarea, input[type=password]").val("");

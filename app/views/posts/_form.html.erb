@@ -10,6 +10,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.submit "Post message", class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+      <%= f.submit "Post message", class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to "Sign in to Post", new_user_session_path, class: "btn btn-danger" %>
+    <% end %>
   </div>
 <% end %>
