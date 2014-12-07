@@ -29,7 +29,7 @@ body {
 }
 
 .content {
-  min-height: 500px;
+  min-height: 450px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -40,10 +40,6 @@ body {
   padding-left: 15px;
 }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-}
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   padding-bottom: 19px;

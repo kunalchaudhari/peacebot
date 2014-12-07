@@ -41,3 +41,5 @@ gem 'byebug', group: [:development, :test]
 gem 'simple_form'
 
 gem 'devise'
+
+gem 'omniauth-twitter'
